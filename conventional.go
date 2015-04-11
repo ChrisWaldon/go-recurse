@@ -38,7 +38,7 @@ func FactorialDefer(x, progress int, back chan int) {
 		close(back)
 		return
 	}
-	defer FactorialChannel(x-1, x*progress, back)
+	defer FactorialDefer(x-1, x*progress, back)
 }
 
 /*

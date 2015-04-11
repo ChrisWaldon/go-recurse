@@ -5,7 +5,11 @@
 	0x000d 00013 (./conventional.go:20)	JHI	,22
 	0x000f 00015 (./conventional.go:20)	CALL	,runtime.morestack_noctxt(SB)
 	0x0014 00020 (./conventional.go:20)	JMP	,0
+
+#Creating stack frame ********************************
 	0x0016 00022 (./conventional.go:20)	SUBQ	$24,SP
+#Creating stack frame ********************************
+
 	0x001a 00026 (./conventional.go:20)	MOVQ	"".progress+40(FP),CX
 	0x001f 00031 (./conventional.go:20)	MOVQ	"".x+32(FP),AX
 	0x0024 00036 (./conventional.go:20)	FUNCDATA	$0,gclocals·f90cfd099b5ec2b453c391fece9d42bb+0(SB)
@@ -22,10 +26,18 @@
 	0x0041 00065 (./conventional.go:24)	IMULQ	AX,BX
 	0x0045 00069 (./conventional.go:24)	MOVQ	BX,8(SP)
 	0x004a 00074 (./conventional.go:24)	PCDATA	$0,$0
+
+#Recursive call *****************************************************
 	0x004a 00074 (./conventional.go:24)	CALL	,"".FactorialTail(SB)
+#Recursive call *****************************************************
+
 	0x004f 00079 (./conventional.go:24)	MOVQ	16(SP),BX
 	0x0054 00084 (./conventional.go:24)	MOVQ	BX,"".~r2+48(FP)
+
+#Collapsing stack frame ******************************
 	0x0059 00089 (./conventional.go:24)	ADDQ	$24,SP
+#Collapsing stack frame ******************************
+
 	0x005d 00093 (./conventional.go:24)	RET	,
 
 "".FactorialDefer t=1 size=192 value=0 args=0x18 locals=0x20
@@ -35,7 +47,11 @@
 	0x000d 00013 (./conventional.go:35)	JHI	,22
 	0x000f 00015 (./conventional.go:35)	CALL	,runtime.morestack_noctxt(SB)
 	0x0014 00020 (./conventional.go:35)	JMP	,0
+
+#Creating stack frame ********************************
 	0x0016 00022 (./conventional.go:35)	SUBQ	$32,SP
+#Creating stack frame ********************************
+
 	0x001a 00026 (./conventional.go:35)	MOVQ	"".progress+48(FP),SI
 	0x001f 00031 (./conventional.go:35)	MOVQ	"".back+56(FP),DX
 	0x0024 00036 (./conventional.go:35)	MOVQ	"".x+40(FP),CX
